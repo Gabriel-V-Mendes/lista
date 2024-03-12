@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=DM+Serif+Display&family=Encode+Sans+Expanded:wght@100&display=swap" rel="stylesheet">
+
+    <link rel="shortcut icon" type="imagex/png" href="https://cdn-icons-png.flaticon.com/512/86/86110.png">
+
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tarefas</title>
+</head>
+
+<body>
+
+    <h1 class="titulo">Lista de Tarefas</h1>
+
+    <input type="text" id="taskInput" placeholder="Digite uma tarefa">
+
+    <button onclick="addTask()" class="botao">Adicionar tarefa</button>
+    <ul id="taskList">
+
+    </ul>
+
+    <script>
+        function addTask() {
+            var taskInput = document.getElementById("taskInput");
+            var taskText = taskInput.value.trim();
+            if (taskText !== "") {
+                var taskList = document.getElementById("taskList");
+                var li = document.createElement("li");
+                li.className = "taskItem";
+                li.innerHTML = taskText + '<button onclick="removeTask(this)">Remover</button>';
+                taskList.appendChild(li);
+                taskInput.value = "";
+            } else {
+                alert("Por favor, insira uma tarefa valida.");
+            }
+        }
+
+        function removeTask(button) {
+            var li = button.parentNode;
+            var ul = li.parentNode;
+            ul.removeChild(li);
+        }
+    </script>
+
+</body>
+
+</html>

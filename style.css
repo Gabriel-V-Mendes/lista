@@ -1,0 +1,38 @@
+@charset "utf 8";
+
+.titulo{
+    text-align: center;
+}
+
+.botao{
+    
+}
+
+body {
+    font-family: "DM Serif Display", serif;
+    font-weight: 400;
+    font-style: normal;
+
+    color: #020936;
+
+    background: rgb(63,94,251);
+    background: radial-gradient(circle, #9bafdd 0%, #5f96f0 47%, #9abaf8 100%);
+}
+
+#taskInput {
+    width: 70%;
+    margin-bottom: 10px;
+}
+
+#tasklist {
+    list-style-type: none;
+    padding: 0;
+}
+
+.taskItem {
+    margin-bottom: 5px;
+}
+
+.taskItem button {
+    margin-left: 5px;
+}
